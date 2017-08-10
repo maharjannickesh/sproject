@@ -1,36 +1,45 @@
 package com.nick.project.service;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.print.attribute.standard.DateTimeAtCreation;
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import com.nick.project.entity.User;
+import com.nick.project.repository.UserRepository;
+import com.sun.org.apache.bcel.internal.generic.NEWARRAY;
 
 @Service
-@Component
 public class UserService {
 
-	User newUser;
+    @Autowired
+    UserRepository userRepository;
 
-	public List<User> saveUser() {
-		List<User> users = new ArrayList<>();
-		System.out.println("Inside Saving User" +users.size());
-		
-		newUser.setFirstName("Nickesh");
-		newUser.setLastName("Maharjan");
-		newUser.setEmail("abc@abc.com");
-		newUser.setPassword("123456789");
-		newUser.setEnabled(true);
-		newUser.setId(1);
-		users.add(newUser);
+    Date date = new Date(new java.util.Date().getTime());
 
-		if (users != null) {
-			System.out.println("Users Not Null");
-		} else {
-			System.out.println("Users Null");
-		}
-		return users;
-	}
+    User newUser = new User();
+
+    @Transactional
+    public void saveUser() {
+        System.out.println("Inside Save User");
+        newUser.setFirstName("New");
+        newUser.setLastName("Maharjan");
+        newUser.setEmail("abc@abc.com");
+        newUser.setPassword("123456789");
+        newUser.setEnabled(true);
+        newUser.setAddedBy("Nikesh");
+        newUser.setAddedTime(date.toString());
+        newUser.setUpdatedBy("NikeshUPD");
+        newUser.setUpdatedTime(date.toString());
+
+        userRepository.save(newUser);
+
+    }
 
 }
