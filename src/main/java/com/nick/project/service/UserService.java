@@ -49,6 +49,7 @@ public class UserService {
 
 	public void addNewUser(User user) {
 		System.out.println("inside Save Service");
+		newUser.setId(user.getId());
 		newUser.setFirstName(user.getFirstName());
 		newUser.setLastName(user.getLastName());
 		newUser.setEmail(user.getEmail());
