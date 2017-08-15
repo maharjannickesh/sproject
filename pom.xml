@@ -9,7 +9,7 @@
 
 	<!-- Shared version number properties -->
 	<properties>
-		<org.springframework.version>4.2.6.RELEASE</org.springframework.version>
+		<org.springframework.version>4.3.10.RELEASE</org.springframework.version>
 		<org.jaxax.servelet>2.3.1</org.jaxax.servelet>
 		<org.javax.persistence>1.0.2</org.javax.persistence>
 		<org.hibernate.validator>6.0.1.Final</org.hibernate.validator>
@@ -173,7 +173,7 @@
 			<version>6.0.1.Final</version>
 		</dependency>
 
-	
+
 
 		<!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-jpa -->
 		<dependency>

@@ -5,122 +5,116 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Size;
 
-import org.hibernate.annotations.Generated;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.stereotype.Component;
-
-
 @Entity
 @Table(name = "user", schema = "spdba")
-//@ComponentScan("com.nick.project.entity")
+// @ComponentScan("com.nick.project.entity")
 public class User implements Serializable {
-	
-	
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -5296535117883502394L;
+    /**
+     * 
+     */
+    private static final long serialVersionUID = -5296535117883502394L;
 
-	@Id
-	@GeneratedValue
-	@Column(name = "userid")
-	private Integer id;
-	
-	@Size(min = 3, message = "First Name must be more than 2 Character")
-	@Column(name = "firstname")
-	private String firstName;
-	
-	@Size(min = 3, message = "Last Name must be more than 2 Character")
-	@Column(name = "lastname")
-	private String lastName;
-	
-	@Email(message = "Invalid Email Address")
-	@Column(unique = true, name= "email")
-	private String email;
-	
-	@Size(min = 6, message = "Password must be more than 5 character")
-	@Column(name = "password")
-	private String password;
-	
-	@Column(name = "optionaltext")
-	private String optionalText;
-	
-	@Column(name = "enabled")
-	private Boolean enabled;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "userid")
+    private Integer id;
 
-	@Column(name = "addby")
-	private String addedBy; 
-	
-	@Column(name = "addedtime")
-	private String addedTime;
-	
-	@Column(name = "updateby")
-	private String updatedBy;
-	
-	@Column(name = "updatedtime")
-	private String updatedTime;
-	
-	public Integer getId() {
-		return id;
-	}
+    @Size(min = 3, message = "First Name must be more than 2 Character")
+    @Column(name = "firstname")
+    private String firstName;
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    @Size(min = 3, message = "Last Name must be more than 2 Character")
+    @Column(name = "lastname")
+    private String lastName;
 
-	public String getFirstName() {
-		return firstName;
-	}
+    @Email(message = "Invalid Email Address")
+    @Column(unique = true, name = "email")
+    private String email;
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
+    @Size(min = 6, message = "Password must be more than 5 character")
+    @Column(name = "password")
+    private String password;
 
-	public String getLastName() {
-		return lastName;
-	}
+    @Column(name = "optionaltext")
+    private String optionalText;
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
+    @Column(name = "enabled")
+    private Boolean enabled;
 
-	public String getEmail() {
-		return email;
-	}
+    @Column(name = "addby")
+    private String addedBy;
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    @Column(name = "addedtime")
+    private String addedTime;
 
-	public String getPassword() {
-		return password;
-	}
+    @Column(name = "updateby")
+    private String updatedBy;
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
+    @Column(name = "updatedtime")
+    private String updatedTime;
 
-	public String getOptionalText() {
-		return optionalText;
-	}
+    public Integer getId() {
+        return id;
+    }
 
-	public void setOptionalText(String optionalText) {
-		this.optionalText = optionalText;
-	}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	public Boolean getEnabled() {
-		return enabled;
-	}
+    public String getFirstName() {
+        return firstName;
+    }
 
-	public void setEnabled(Boolean enabled) {
-		this.enabled = enabled;
-	}
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getOptionalText() {
+        return optionalText;
+    }
+
+    public void setOptionalText(String optionalText) {
+        this.optionalText = optionalText;
+    }
+
+    public Boolean getEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
+    }
 
     public String getAddedBy() {
         return addedBy;
@@ -153,7 +147,5 @@ public class User implements Serializable {
     public void setUpdatedTime(String updatedTime) {
         this.updatedTime = updatedTime;
     }
-	
-	
 
 }

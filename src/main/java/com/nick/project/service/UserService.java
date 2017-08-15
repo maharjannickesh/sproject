@@ -1,19 +1,11 @@
 package com.nick.project.service;
 
 import java.sql.Date;
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.print.attribute.standard.DateTimeAtCreation;
 import javax.transaction.Transactional;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
-
 import com.nick.project.entity.User;
 import com.nick.project.repository.UserRepository;
-import com.sun.org.apache.bcel.internal.generic.NEWARRAY;
 
 @Service
 public class UserService {

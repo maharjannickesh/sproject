@@ -60,9 +60,9 @@
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
 		<property name="url"
-			value="jdbc:mysql://spdba.ckd1cwipre1d.us-east-2.rds.amazonaws.com:3306?createDatabaseIfNotExist=true" />
-		<property name="username" value="maharjannickesh" />
-		<property name="password" value="character1" />
+			value="jdbc:mysql://sp-dba.ckd1cwipre1d.us-east-2.rds.amazonaws.com:3306/spdba?createDatabaseIfNotExist=true" />
+		<property name="username" value="spdba" />
+		<property name="password" value="spdba123" />
 	</bean>
 
 
